@@ -17,6 +17,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   carousel_slider: ^5.0.0
   video_player: ^2.9.2
+  flutter_svg: ^2.0.15
+  connectivity_plus: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -34,7 +36,7 @@ flutter:
     - assets/images/
 #    - assets/logos/
 #    - assets/gifs/
-#    - assets/icons/
+    - assets/icons/
     - assets/fonts/
     - assets/videos/
 

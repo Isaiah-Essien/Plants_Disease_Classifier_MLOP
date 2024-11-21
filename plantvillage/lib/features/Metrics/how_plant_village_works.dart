@@ -15,7 +15,7 @@ class HowPlantVillageWorks extends StatefulWidget {
 
 class _HowPlantVillageWorksState extends State<HowPlantVillageWorks> {
   late VideoPlayerController _controller;
-  double _volume = 0.5;
+  double _volume = 1;
   bool _showControls = true;
   late Timer _hideControlsTimer;
 
@@ -63,7 +63,7 @@ class _HowPlantVillageWorksState extends State<HowPlantVillageWorks> {
   }
 
   void _startHideControlsTimer() {
-    _hideControlsTimer = Timer(const Duration(seconds: 3), () {
+    _hideControlsTimer = Timer(const Duration(seconds: 5), () {
       setState(() {
         _showControls = false;
       });

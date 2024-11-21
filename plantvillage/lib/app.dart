@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantvillage/utils/constants/colors.dart';
-
+import 'package:plantvillage/utils/network_manager.dart';
 import 'features/controller/onboarding_controller.dart';
 
 class App extends StatelessWidget {
@@ -8,16 +8,17 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Inverse',
       themeMode: ThemeMode.system,
-      home:  const OnboardingScreensController(),
+      home: const NetworkManager(
+        child: OnboardingScreensController(), // Wrap the onboarding screens
+      ),
       theme: ThemeData(
-          primarySwatch: ColorResources.getMaterialColor(ColorResources.PRIMARY),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          fontFamily: 'Montserrat'
+        primarySwatch: ColorResources.getMaterialColor(ColorResources.PRIMARY),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Montserrat',
       ),
     );
   }
