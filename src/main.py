@@ -153,8 +153,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 app = FastAPI()
 
 # Paths
-MODEL_PATH = r"C:\Users\hp\OneDrive\Desktop\Plants_Disease_Classifier_MLOP\models\cnn_model.h5"
-ENCODER_PATH = r"C:\Users\hp\OneDrive\Desktop\Plants_Disease_Classifier_MLOP\models\label_encoder.pkl"
+MODEL_PATH = r"C:\Users\hp\OneDrive\Desktop\Plants_Disease_Classifier_MLOP\src\cnn_model.h5"
+ENCODER_PATH = r"C:\Users\hp\OneDrive\Desktop\Plants_Disease_Classifier_MLOP\src\label_encoder.pkl"
 DATASET_PATH = r"C:\Users\hp\OneDrive\Desktop\Plants_Disease_Classifier_MLOP\dataset"
 
 # Load the model and label encoder with error handling
