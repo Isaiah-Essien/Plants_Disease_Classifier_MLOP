@@ -17,9 +17,9 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 app = FastAPI()
 
 # Paths
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "src/cnn_model.h5")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "models/cnn_model.h5")
 ENCODER_PATH = os.path.join(os.path.dirname(
-    __file__), "src/label_encoder.pkl")
+    __file__), "models/label_encoder.pkl")
 DATASET_PATH = os.path.join(os.path.dirname(__file__), "dataset")
 
 
