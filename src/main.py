@@ -179,8 +179,9 @@ async def log_requests(request: Request, call_next):
     start_time = time.time()
     response = await call_next(request)
     latency = time.time() - start_time
-    print(f"Endpoint: {request.url.path}, Method: {
-          request.method}, Latency: {latency:.2f}s")
+    print(
+        f"Endpoint: {request.url.path}, Method: {request.method}, Latency: {latency:.2f}s"
+        )
 
     return response
 
