@@ -2,7 +2,7 @@
 This project focuses on detecting and classifying various plant diseases using a convolutional neural network (CNN) model trained on a labeled dataset of plant leaf images. The model is integrated with a FastAPI backend and exposes RESTful endpoints for prediction and retraining. It is also deployed as part of a mobile application to enable real-time disease detection.
 
 ## Key Features
-1. Pre-trained CNN Model:
+1. Trained CNN Model:
 
 - Achieves high accuracy on the provided dataset.
 - Outputs predictions as probabilities and class labels.
