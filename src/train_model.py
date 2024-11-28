@@ -13,20 +13,33 @@ from preprocess import preprocess_data
 def train_cnn(data, labels, model_save_path=None, label_encoder_path=None):
     # Preprocess Data
     data, encoded_labels, label_encoder = preprocess_data(data, labels)
-    num_classes = len(np.unique(encoded_labels))
-    X_train, X_test, y_train, y_test = train_test_split(
-        data, encoded_labels, test_size=0.25, stratify=encoded_labels)
 
-    # Convert to categorical
+    # Ensure the dataset is not too small
+    if len(data) < 2:
+        raise ValueError(
+            "Dataset is too small to train the model. Please provide more data.")
+
+    num_classes = len(np.unique(encoded_labels))
+
+    # Stratified split
+    try:
+        X_train, X_test, y_train, y_test = train_test_split(
+            data, encoded_labels, test_size=0.25, stratify=encoded_labels, random_state=42
+        )
+    except ValueError as e:
+        raise ValueError(f"Error during train-test split: {e}")
+
+    # Convert labels to categorical
     y_train_onehot = to_categorical(y_train, num_classes=num_classes)
     y_test_onehot = to_categorical(y_test, num_classes=num_classes)
 
     # Build model
     model = build_cnn(X_train.shape[1:], num_classes)
 
-    # Train model
+    # Train model with early stopping
     early_stopping = EarlyStopping(
-        monitor='val_loss', patience=2, restore_best_weights=True, verbose=1)
+        monitor='val_loss', patience=3, restore_best_weights=True, verbose=1, min_delta=0.001
+    )
     history = model.fit(
         X_train, y_train_onehot,
         validation_data=(X_test, y_test_onehot),
@@ -46,13 +59,16 @@ def train_cnn(data, labels, model_save_path=None, label_encoder_path=None):
     # Confusion Matrix Visualization
     cm = confusion_matrix(y_test, predictions)
     disp = ConfusionMatrixDisplay(
-        confusion_matrix=cm, display_labels=label_encoder.classes_)
+        confusion_matrix=cm, display_labels=label_encoder.classes_
+    )
     plt.figure(figsize=(12, 12))
     disp.plot(cmap=plt.cm.Blues, colorbar=True)
     plt.title('Confusion Matrix')
     plt.xticks(rotation=45)
-    plt.show()
+    plt.savefig("confusion_matrix.png")  # Save plot if needed
+    plt.close()
 
+    # Training and Validation Plots
     plt.figure(figsize=(12, 6))
     plt.subplot(1, 2, 1)
     plt.plot(history.history['accuracy'], label='Train Accuracy')
@@ -64,11 +80,13 @@ def train_cnn(data, labels, model_save_path=None, label_encoder_path=None):
     plt.plot(history.history['val_loss'], label='Val Loss')
     plt.title('Loss')
     plt.legend()
-    plt.show()
+    plt.savefig("training_curves.png")  # Save plot if needed
+    plt.close()
 
     # Save the model
     if model_save_path:
-        model.save(model_save_path)
+        model.save(model_save_path, save_format="h5")
+        print(f"Model saved to: {model_save_path}")
 
     # Save the label encoder
     if label_encoder_path:
