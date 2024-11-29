@@ -120,6 +120,22 @@ https://plant-disease-classifier-tsau.onrender.com/docs
 - main_pipeline.py: Coordinates data flow, training, and other pipelines.
 - requirements.txt: Lists dependencies required to run the project (e.g., FastAPI, TensorFlow).
 
+
+
+## Steps to Set UP the Project
+1. Clone this repository
+2. Install Flutter from Flutter's official website
+3. Set up flutter and run flutter doctor command to check for errors on your set up
+4. Once complete, cd into the project repo, then cd into src
+5. Run pip install -r requirements.txt
+6. Run locust -f locust.py to minitor the flood request of the end point
+7. Run uvicorn main:app --host 0.0.0.0 --port 8000 to view the FastAPI endpoints and interact
+8. Go out of src and cd into plantvillage folder
+9. Run Flutter run to view the project
+9. Select and Emulator and ensure you have internet access.
+10. Enjoy the Plantvillage app. 
+- Dont forget to upload a new dataset and retrain the model
+
 ![Confusion Matrix](./plots/plant_coff_max.png)
 ![Training History](./plots/plant_train_hist.png)
 ![Retraining History](./plots/plant_retrain_hist.png)
