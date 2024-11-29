@@ -136,6 +136,9 @@ https://plant-disease-classifier-tsau.onrender.com/docs
 10. Enjoy the Plantvillage app. 
 - Dont forget to upload a new dataset and retrain the model
 
+## Link to Video 
+- https://youtu.be/uPpkZHglNRA
+
 ![Confusion Matrix](./plots/plant_coff_max.png)
 ![Training History](./plots/plant_train_hist.png)
 ![Retraining History](./plots/plant_retrain_hist.png)
