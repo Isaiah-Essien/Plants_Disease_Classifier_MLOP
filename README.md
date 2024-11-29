@@ -1,6 +1,8 @@
 # Plant Disease Classification API
 This project focuses on detecting and classifying various plant diseases using a convolutional neural network (CNN) model trained on a labeled dataset of plant leaf images. The model is integrated with a FastAPI backend and exposes RESTful endpoints for prediction and retraining. It is also deployed as part of a mobile application to enable real-time disease detection.
 
+![Confusion Matrix](./plots/Screenshot%202024-11-29%20115638.png)
+
 ## Key Features
 1. Trained CNN Model:
 
@@ -20,7 +22,7 @@ This project focuses on detecting and classifying various plant diseases using a
 ## Dataset
 The dataset includes labeled images of healthy and diseased plant leaves. It is organized into folders for each class. The dataset can be accessed here:
 
-### Dataset Link
+### Dataset Port
 - Kaggle
 
 ## Model Metrics and Outcomes

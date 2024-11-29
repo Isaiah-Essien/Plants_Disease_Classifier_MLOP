@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import '../../utils/constants/colors.dart';
 import 'features/Metrics/model_metrics.dart';
 import 'features/PlantScreens/scanplant.dart';
-import 'features/Tracker/plant_tracker.dart';
-
+import 'features/Retrain/retrain.dart';
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
 
@@ -18,7 +17,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> _screens = [
     const ScanPlant(), // Home screen linked to ScanPlant
     const ModelMetrics(), // ModelMetrics screen
-    const TrackerPlaceholder(), // Placeholder for the Tracker screen
+    const Retrain(), // Updated Tracker screen to Retrain
   ];
 
   @override
@@ -48,7 +47,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.track_changes),
-            label: "Tracker",
+            label: "Retrain", // Updated label for Retrain
           ),
         ],
       ),

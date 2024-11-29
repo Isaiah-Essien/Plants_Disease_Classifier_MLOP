@@ -14,15 +14,15 @@ class ModelMetrics extends StatefulWidget {
 
 class _ModelMetricsState extends State<ModelMetrics> {
   final List<String> _imagePaths = [
-    'assets/images/metric_graph_1.png',
-    'assets/images/metric_graph_2.png',
-    'assets/images/metric_graph_3.png',
+    'assets/images/plant_coff_max.png',
+    'assets/images/plant_dist.png',
+    'assets/images/sample_data.JPG',
   ];
 
   final List<String> _descriptions = [
-    "Accuracy over training epochs for plant disease detection.",
-    "Precision and recall trends for the model's predictions.",
-    "Confusion matrix visualization for classification performance.",
+    "This confusion matrix visualizes the performance of a classification model applied to a dataset of plant diseases across various categories, including diseases affecting peppers, potatoes, and tomatoes, as well as their healthy states. ",
+    "The dataset contains images of healthy and diseased plants across multiple classes, with significant class imbalance. Some classes, like Tomato__Target_Spot, have over 3000 samples, while others, like Potato___Late_blight, have very few. Healthy plant classes are fewer and less represented compared to diseased classes.",
+    "Here is a sample plant image.",
   ];
 
   int _currentIndex = 0; // Tracks the current slide index
@@ -56,19 +56,19 @@ class _ModelMetricsState extends State<ModelMetrics> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Model Performance",
+                    "Visualizations",
                     style: TextStyle(
                       color: Colors.black87,
-                      fontSize: 24,
+                      fontSize: 20,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Here are the metrics and visualizations of your plant disease prediction model.",
+                    "Here are the metrics and visualizations of dataset and prediction model.",
                     style: TextStyle(
                       color: Colors.black87,
-                      fontSize: 14,
+                      fontSize: 13,
                     ),
                   ),
                 ],
@@ -136,7 +136,7 @@ class _ModelMetricsState extends State<ModelMetrics> {
                   _descriptions[_currentIndex],
                   key: ValueKey<int>(_currentIndex), // Unique key for the text
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 10,
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF333333),
                   ),
@@ -144,13 +144,13 @@ class _ModelMetricsState extends State<ModelMetrics> {
                 ),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
 
             // Elevated Button: Check How PlantVillage Works
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: CustomElevatedButton(
-                buttonText: "How it works",
+                buttonText: "Watch is a plant disease?",
                 onPressed: () {
                   Navigator.push(
                     context,

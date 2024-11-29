@@ -84,7 +84,7 @@ class _HowPlantVillageWorksState extends State<HowPlantVillageWorks> {
     return Scaffold(
       backgroundColor: ColorResources.BACKGROUND,
       appBar: const CustomAppBar(
-        title: "Real-time Detection",
+        title: "Learn about Plant Diseases",
         titleColor: Colors.white,
         iconColor: Colors.white,
         showBackButton: true,
@@ -99,7 +99,7 @@ class _HowPlantVillageWorksState extends State<HowPlantVillageWorks> {
 
             // Instruction Text
             const Text(
-              "Watch this short video to see how to scan your plant and get real-time disease analysis:",
+              "Watch this short video to learn about pant disease and how they affect the environment:",
               style: TextStyle(
                 fontSize: 14,
                 color: Color(0xFF333333),

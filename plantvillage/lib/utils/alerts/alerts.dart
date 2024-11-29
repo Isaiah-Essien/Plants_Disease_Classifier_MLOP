@@ -87,7 +87,7 @@ class _ErrorAlertState extends State<ErrorAlert> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        'Error message',
+                        'Prediction message',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
@@ -219,7 +219,7 @@ class _WarningAlertState extends State<WarningAlert> {
                       ),
                       IconButton(
                         padding: EdgeInsets.zero,
-                        constraints: BoxConstraints(),
+                        constraints: const BoxConstraints(),
                         icon: const Icon(Icons.close,
                             size: 20, color: Colors.black),
                         onPressed: () {
