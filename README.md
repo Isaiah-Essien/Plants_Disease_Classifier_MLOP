@@ -3,6 +3,7 @@ This project focuses on detecting and classifying various plant diseases using a
 
 ![Confusion Matrix](./plots/Screenshot%202024-11-29%20115638.png)
 
+![Confusion Matrix](./plots/Screenshot%202024-11-29%20185750.png)
 ## Key Features
 1. Trained CNN Model:
 
