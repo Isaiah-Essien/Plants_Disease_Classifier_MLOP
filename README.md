@@ -140,6 +140,9 @@ https://plant-disease-classifier-tsau.onrender.com/docs
 ## Link to Video 
 - https://youtu.be/uPpkZHglNRA
 
+## Link to APK file:
+- https://drive.google.com/file/d/19bgwDWDQnuqCUKmQ1SG6FdA1Xh7GFvwF/view?usp=sharing
+
 ![Confusion Matrix](./plots/plant_coff_max.png)
 ![Training History](./plots/plant_train_hist.png)
 ![Retraining History](./plots/plant_retrain_hist.png)

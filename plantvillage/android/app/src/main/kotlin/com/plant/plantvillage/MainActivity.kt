@@ -1,4 +1,4 @@
-package com.example.plantvillage
+package com.plant.plantvillage
 
 import io.flutter.embedding.android.FlutterActivity
 
